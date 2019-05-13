@@ -1,0 +1,34 @@
+name: my-first-project
+
+runtime: nodejs
+
+vars:
+  accessKey: 4d8902516a79e464d96a9bad92f8aeefc49f5fcdc28d74dc77fab01835a8
+  stages:
+    local:
+      chainkit:
+        itnUrl: /v1/itn/callback
+        environment: test
+      response-http-headers:
+        Access-Control-Allow-Origin: "*"
+        Access-Control-Allow-Headers: "Authorization,Content-Type"
+    dev:
+      chainkit:
+        itnUrl: /v1/itn/callback
+        environment: test
+      response-http-headers:
+        Access-Control-Allow-Origin: "*"
+        Access-Control-Allow-Headers: "Authorization,Content-Type"
+    prod:
+      chainkit:
+        itnUrl: /v1/itn/callback
+        environment: live
+      response-http-headers:
+        Access-Control-Allow-Origin: "http://example.org"
+
+plugins:
+  - squeezer-serve
+  - squeezer-swagger
+  - squeezer-chainkit-plugin
+
+swagger: !!inc/file "swagger.yml"
