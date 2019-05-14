@@ -1,6 +1,7 @@
 name: my-first-project
 
 runtime: nodejs
+runtimeVersion: "8.10"
 
 vars:
   accessKey: 4d8902516a79e464d96a9bad92f8aeefc49f5fcdc28d74dc77fab01835a8
